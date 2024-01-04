@@ -14,7 +14,27 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
+    if (playerSelection === computerSelection) {
+        return `It's a tie! ${playerSelection} ties with ${computerSelection}`;
+    }
+    let isPlayerWon = false;
+    switch (playerSelection) {
+        case 'paper':
+          isPlayerWon = computerSelection === 'rock';
+          break;
+        case 'rock':
+          isPlayerWon = computerSelection === 'scissors';
+          break;
+        case 'scissors':
+          isPlayerWon = computerSelection === 'paper';
+          break;
+    }
+    if (isPlayerWon) {
+        score.player += 1;
+    } else {
+        score.computer += 1;
+    }
+    return isPlayerWon ? `You won! ${playerSelection} beats ${computerSelection}` : `You lost! ${playerSelection} is beaten by ${computerSelection}`;
 };
  
 function game() {
@@ -23,8 +43,17 @@ function game() {
     while (i <= roundCount) {
         const playerSelection = (prompt('Make your choice: rock, scissors or paper?', 'rock')).toLowerCase();
         const computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
+        const roundResult = playRound(playerSelection, computerSelection);
+        console.log(roundResult);
         i += 1;
+    }
+    const { player, computer } = score;
+    if (player > computer) {
+        console.log(`Player won! Score: ${player} : ${computer}`);
+    } else if (computer > player) {
+        console.log(`Computer won! Score: ${computer} : ${player}`);
+    } else {
+        console.log("It's a tie!");
     }
 };
 
