@@ -10,7 +10,35 @@
 </head>
 
 <body>
-    <div class="container"></div>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Rock paper scissors</h1>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <h2 class="sub-title">Choose your weapon</h2>
+            <span class="description">First to score 5 points wins</span>
+            <div class="score-table">
+                <figure class="player">
+                    <img class="icon" src="./icons/question.svg" alt="player icon" />
+                    <figcaption>Player: <span>0</span></figcaption>
+                </figure>
+                <figure class="computer">
+                    <img class="icon" src="./icons/question.svg" alt="computer icon" />
+                    <figcaption>Computer: <span>0</span></figcaption>
+                </figure>
+            </div>
+            <div class="navigation">
+                <button class="button button--rock"></button>
+                <button class="button button--scissors"></button>
+                <button class="button button--paper"></button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <span>Copyright © 2024 <a href="https://github.com/pav-nk">pav_nk</a></span>
+    </footer>
     <script src="./script.js"></script>
 </body>
 
