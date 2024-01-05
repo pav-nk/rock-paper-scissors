@@ -1,9 +1,8 @@
 :root {
     --color1: #1D1E20;
     --color2: #2E2E33;
-    --color3: #DBBC4D;
+    --color3: #FF7700;
     --color4: #DADADB;
-    --color5: #4EB1D4;
 }
 
 html {
@@ -22,8 +21,13 @@ html {
 }
 
 @font-face {
-    font-family: RobotoLightItalic;
-    src: url(./fonts/Roboto-LightItalic.ttf);
+    font-family: RobotoBold;
+    src: url(./fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: BungeeSpice;
+    src: url(./fonts/BungeeSpice-Regular.ttf);
 }
   
 html, body {
@@ -68,6 +72,24 @@ li {
     height: 100%;
 }
 
+.wrapper {
+ padding: 40px 0;   
+}
+
+.link {
+    color: var(--color4);
+}
+
+.link--github::before {
+    content: '';
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    background: url('./icons/github.svg') 100% / cover no-repeat;
+}
+
 .header, .footer {
     background-color: var(--color1);
     text-align: center;
@@ -78,12 +100,88 @@ li {
 }
 
 .title {
+    font-family: BungeeSpice;
     color: var(--color3);
-    font-size: 2rem;
+    font-size: 3rem;
     text-transform: uppercase;
+}
+
+.sub-title {
+    font-family: RobotoBold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .icon {
     width: 128px;
     height: 128px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.card {
+    text-align: center;
+}
+
+.card .icon {
+    margin-bottom: 10px;
+}
+
+.navigation {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 10%;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+.button--rock {
+    background: var(--color3) url(./icons/rock.svg) center / 70% no-repeat;
+}
+
+.button--scissors {
+    background: var(--color3) url(./icons/scissors.svg) center / 60% no-repeat;
+}
+
+.button--paper {
+    background: var(--color3) url(./icons/paper.svg) center / 90% no-repeat;
+}
+
+.footer {
+    padding: 20px 0;
+    color: var(--color4);
+}
+
+.footer span, .footer .link {
+    line-height: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.link {
+    font-family: RobotoBold;
+    color: var(--color3);
 }
